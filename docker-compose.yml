@@ -1,0 +1,9 @@
+services:
+  database:
+    image: mysql
+    build: Dockerfile.database
+    environment:
+      MYSQL_DATABASE: authentication
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
