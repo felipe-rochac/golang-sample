@@ -18,7 +18,7 @@ func doMappings() {
 func StartServer() {
 	mux := http.NewServeMux()
 	handler := http.HandlerFunc(validations.ValidateRequest)
-	mux.HandleFunc(handler)
+	mux.HandleFunc("*", handler)
 	// Spinning up the server.
 	err := http.ListenAndServe(port, mux)
 	if err != nil {
